@@ -53,7 +53,7 @@ foreach($settingsResult as $setting) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($article['title']); ?> - <?php echo isset($settings['site_title']) ? $settings['site_title'] : '交个朋友'; ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($article['excerpt'] ? $article['excerpt'] : Utils::truncate(Utils::cleanHtml($article['content']), 150)); ?>">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
@@ -63,9 +63,9 @@ foreach($settingsResult as $setting) {
         <div class="container">
             <h1 class="page-title"><?php echo htmlspecialchars($article['title']); ?></h1>
             <div class="breadcrumb">
-                <a href="index.php">首页</a> / 
-                <a href="news.php">新闻资讯</a> / 
-                <a href="news.php?category=<?php echo $article['category_id']; ?>"><?php echo htmlspecialchars($article['category_name']); ?></a> / 
+                <a href="/">首页</a> / 
+                <a href="/news/">新闻资讯</a> / 
+                <a href="/news/?category=<?php echo $article['category_id']; ?>"><?php echo htmlspecialchars($article['category_name']); ?></a> / 
                 <?php echo htmlspecialchars(Utils::truncate($article['title'], 30)); ?>
             </div>
         </div>
@@ -95,7 +95,7 @@ foreach($settingsResult as $setting) {
                     </article>
 
                     <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee;">
-                        <a href="news.php" class="btn">返回新闻列表</a>
+                        <a href="/news/" class="btn">返回新闻列表</a>
                     </div>
                 </div>
 
@@ -104,7 +104,7 @@ foreach($settingsResult as $setting) {
                     <h3>相关文章</h3>
                     <ul>
                         <?php foreach($relatedArticles as $related): ?>
-                        <li><a href="news-detail.php?id=<?php echo $related['id']; ?>"><?php echo htmlspecialchars(Utils::truncate($related['title'], 40)); ?></a></li>
+                        <li><a href="/news/<?php echo $related['id']; ?>.html"><?php echo htmlspecialchars(Utils::truncate($related['title'], 40)); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                     <?php endif; ?>
@@ -123,7 +123,7 @@ foreach($settingsResult as $setting) {
                         );
                         foreach($latestNews as $news):
                         ?>
-                        <li><a href="news-detail.php?id=<?php echo $news['id']; ?>"><?php echo htmlspecialchars(Utils::truncate($news['title'], 40)); ?></a></li>
+                        <li><a href="/news/<?php echo $news['id']; ?>.html"><?php echo htmlspecialchars(Utils::truncate($news['title'], 40)); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -133,6 +133,6 @@ foreach($settingsResult as $setting) {
 
     <?php include 'includes/footer.php'; ?>
 
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>

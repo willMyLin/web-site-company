@@ -5,16 +5,16 @@
                 <div class="footer-section">
                     <h3>关于我们</h3>
                     <ul>
-                        <li><a href="about.php">公司概况</a></li>
-                        <li><a href="about.php">企业文化</a></li>
-                        <li><a href="about.php">发展历程</a></li>
-                        <li><a href="about.php">资质荣誉</a></li>
+                        <li><a href="/about/">公司概况</a></li>
+                        <li><a href="/about/">企业文化</a></li>
+                        <li><a href="/about/">发展历程</a></li>
+                        <li><a href="/about/">资质荣誉</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>解决方案</h3>
                     <ul>
-                        <li><a href="news.php">智慧建筑</a></li>
+                            <li><a href="/news/">新闻资讯</a></li>
                         <li><a href="news.php">智慧园区</a></li>
                         <li><a href="news.php">智慧民生</a></li>
                         <li><a href="news.php">智慧文旅</a></li>

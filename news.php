@@ -51,7 +51,7 @@ foreach($settingsResult as $setting) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新闻资讯 - <?php echo isset($settings['site_title']) ? $settings['site_title'] : '交个朋友'; ?></title>
-    <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
@@ -81,7 +81,7 @@ foreach($settingsResult as $setting) {
                             <?php endif; ?>
                             <div class="news-content">
                                 <h3 class="news-title">
-                                    <a href="news-detail.php?id=<?php echo $news['id']; ?>"><?php echo htmlspecialchars($news['title']); ?></a>
+                                    <a href="/news/<?php echo $news['id']; ?>.html"><?php echo htmlspecialchars($news['title']); ?></a>
                                 </h3>
                                 <p class="news-excerpt"><?php echo Utils::truncate($news['excerpt'] ? $news['excerpt'] : Utils::cleanHtml($news['content']), 150); ?></p>
                                 <div class="news-meta">
@@ -118,9 +118,9 @@ foreach($settingsResult as $setting) {
                 <div class="sidebar">
                     <h3>新闻分类</h3>
                     <ul>
-                        <li><a href="news.php" <?php echo $categoryId == 0 ? 'style="color: #0066cc; font-weight: bold;"' : ''; ?>>全部新闻</a></li>
+                                    <li><a href="/news/" <?php echo $categoryId == 0 ? 'style="color: #0066cc; font-weight: bold;"' : ''; ?>>全部新闻</a></li>
                         <?php foreach($categories as $category): ?>
-                        <li><a href="news.php?category=<?php echo $category['id']; ?>" <?php echo $categoryId == $category['id'] ? 'style="color: #0066cc; font-weight: bold;"' : ''; ?>><?php echo htmlspecialchars($category['name']); ?></a></li>
+                                    <li><a href="/news/?category=<?php echo $category['id']; ?>" <?php echo $categoryId == $category['id'] ? 'style="color: #0066cc; font-weight: bold;"' : ''; ?>><?php echo htmlspecialchars($category['name']); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
 
@@ -137,7 +137,7 @@ foreach($settingsResult as $setting) {
                         );
                         foreach($latestNews as $news):
                         ?>
-                        <li><a href="news-detail.php?id=<?php echo $news['id']; ?>"><?php echo htmlspecialchars(Utils::truncate($news['title'], 40)); ?></a></li>
+                                    <li><a href="/news/<?php echo $news['id']; ?>.html"><?php echo htmlspecialchars(Utils::truncate($news['title'], 40)); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -147,6 +147,6 @@ foreach($settingsResult as $setting) {
 
     <?php include 'includes/footer.php'; ?>
 
-    <script src="assets/js/main.js"></script>
+                <script src="/assets/js/main.js"></script>
 </body>
 </html>

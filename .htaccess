@@ -1,0 +1,28 @@
+RewriteEngine On
+
+# 新闻详情伪静态
+RewriteRule ^news/([0-9]+)\.html$ news-detail.php?id=$1 [L]
+
+# 新闻列表伪静态
+RewriteRule ^news/?$ news.php [L]
+
+# 解决方案伪静态（如有单独页面可扩展）
+# RewriteRule ^solutions/([0-9]+)\.html$ solution-detail.php?id=$1 [L]
+
+# 产品中心伪静态（如有单独页面可扩展）
+# RewriteRule ^products/([0-9]+)\.html$ product-detail.php?id=$1 [L]
+
+# 其他伪静态规则可按需添加
+
+# 新版新闻详情伪静态
+RewriteRule ^new/([0-9]+)\.html$ new-detail.php?id=$1 [L]
+
+# 新版新闻列表伪静态
+RewriteRule ^new/?$ new.php [L]
+
+# 首页伪静态（可选，通常直接用 / 即可）
+RewriteRule ^index\.html$ index.php [L]
+RewriteRule ^$ index.php [L]
+
+# 关于我们伪静态
+RewriteRule ^about/?$ about.php [L]

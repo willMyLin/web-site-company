@@ -18,7 +18,7 @@ foreach($settingsResult as $setting) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于我们 - <?php echo isset($settings['site_title']) ? $settings['site_title'] : '交个朋友'; ?></title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
@@ -28,7 +28,7 @@ foreach($settingsResult as $setting) {
         <div class="container">
             <h1 class="page-title">关于我们</h1>
             <div class="breadcrumb">
-                <a href="index.php">首页</a> / 关于我们
+                <a href="/">首页</a> / 关于我们
             </div>
         </div>
     </div>
@@ -147,7 +147,7 @@ foreach($settingsResult as $setting) {
 
                     <h3 style="margin-top: 30px;">快速导航</h3>
                     <ul>
-                        <li><a href="news.php">新闻资讯</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
                         <li><a href="solutions.php">解决方案</a></li>
                         <li><a href="products.php">产品中心</a></li>
                         <li><a href="contact.php">联系我们</a></li>
@@ -159,6 +159,6 @@ foreach($settingsResult as $setting) {
 
     <?php include 'includes/footer.php'; ?>
 
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 </body>
 </html>

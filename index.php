@@ -74,7 +74,7 @@ $sliders = $db->fetchAll(
                         <div class="placeholder-content">
                             <h2>全流程服务</h2>
                             <p>前期 1 对 1 沟通，免费出方案与原型图；建站中同步进度、支持修改，上线后提供操作培训。</p>
-                            <a href="about.php" class="btn btn-light">了解更多</a>
+                            <a href="/about/" class="btn btn-light">了解更多</a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ $sliders = $db->fetchAll(
                         <div class="placeholder-content">
                             <h2>靠谱团队</h2>
                             <p>核心成员 10 年 + 行业经验，部分小伙伴来自大厂</p>
-                            <a href="about.php" class="btn btn-light">了解更多</a>
+                            <a href="/about/" class="btn btn-light">了解更多</a>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ $sliders = $db->fetchAll(
                         <div class="placeholder-content">
                             <h2>贴心售后</h2>
                             <p>上线后 1 年免费技术维护，24 小时内响应需求；定期安全检测与性能优化，提前规避问题</p>
-                            <a href="about.php" class="btn btn-light">了解更多</a>
+                            <a href="/about/" class="btn btn-light">了解更多</a>
                         </div>
                     </div>
                 </div>
@@ -154,7 +154,7 @@ $sliders = $db->fetchAll(
                     </div>
                     
                     <div style="margin-top: 40px;">
-                        <a href="about.php" class="btn-outline-primary">了解更多</a>
+                        <a href="/about/" class="btn-outline-primary">了解更多</a>
                     </div>
                 </div>
                 
@@ -176,7 +176,7 @@ $sliders = $db->fetchAll(
             </div>
             <div class="news-grid">
                 <?php foreach($featuredNews as $news): ?>
-                <div class="news-item" onclick="location.href='news-detail.php?id=<?php echo $news['id']; ?>'" style="cursor: pointer;">
+                <div class="news-item" onclick="location.href='/news/<?php echo $news['id']; ?>.html'" style="cursor: pointer;">
                     <?php if($news['featured_image']): ?>
                         <img src="<?php echo UPLOAD_URL . $news['featured_image']; ?>" alt="<?php echo htmlspecialchars($news['title']); ?>" class="news-image">
                     <?php else: ?>
@@ -184,7 +184,7 @@ $sliders = $db->fetchAll(
                     <?php endif; ?>
                     <div class="news-content">
                         <h3 class="news-title">
-                            <a href="news-detail.php?id=<?php echo $news['id']; ?>"><?php echo htmlspecialchars($news['title']); ?></a>
+                            <a href="/news/<?php echo $news['id']; ?>.html"><?php echo htmlspecialchars($news['title']); ?></a>
                         </h3>
                         <p class="news-excerpt"><?php echo Utils::truncate($news['excerpt'] ?: Utils::cleanHtml($news['content']), 100); ?></p>
                         <div class="news-meta">
