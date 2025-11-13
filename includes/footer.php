@@ -1,7 +1,7 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
+            <!-- <div class="footer-content">
                 <div class="footer-section">
                     <h3>关于我们</h3>
                     <ul>
@@ -14,18 +14,18 @@
                 <div class="footer-section">
                     <h3>解决方案</h3>
                     <ul>
-                            <li><a href="/news/">新闻资讯</a></li>
-                        <li><a href="news.php">智慧园区</a></li>
-                        <li><a href="news.php">智慧民生</a></li>
-                        <li><a href="news.php">智慧文旅</a></li>
+                        <li><a href="/news/">新闻资讯</a></li>
+                        <li><a href="/news/">智慧园区</a></li>
+                        <li><a href="/news/">智慧民生</a></li>
+                        <li><a href="/news/">智慧文旅</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>产品中心</h3>
                     <ul>
-                        <li><a href="news.php">物联网产品</a></li>
-                        <li><a href="news.php">人工智能</a></li>
-                        <li><a href="news.php">电子政务</a></li>
+                        <li><a href="/news/">物联网产品</a></li>
+                        <li><a href="/news/">人工智能</a></li>
+                        <li><a href="/news/">电子政务</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -36,7 +36,7 @@
                         <li>邮箱：<?php echo isset($settings['company_email']) ? $settings['company_email'] : ''; ?></li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
             <div class="footer-bottom">
                 <p>COPYRIGHT © <?php echo date('Y'); ?> <?php echo isset($settings['company_name']) ? $settings['company_name'] : '厦门交个朋友有限公司'; ?> 版权所有</p>
             </div>

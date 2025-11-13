@@ -58,8 +58,8 @@ $sliders = $db->fetchAll(
                     <?php endif; ?>
                     <div class="slide-content">
                         <h2><?php echo htmlspecialchars($slider['title']); ?></h2>
-                        <?php if($slider['description']): ?>
-                            <p><?php echo htmlspecialchars($slider['description']); ?></p>
+                        <?php if($slider['subtitle']): ?>
+                            <p><?php echo htmlspecialchars($slider['subtitle']); ?></p>
                         <?php endif; ?>
                         <?php if($slider['link']): ?>
                             <a href="<?php echo htmlspecialchars($slider['link']); ?>" class="btn btn-light">了解更多</a>
@@ -196,7 +196,7 @@ $sliders = $db->fetchAll(
                 <?php endforeach; ?>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="news.php" class="btn">了解更多</a>
+                <a href="/news" class="btn">了解更多</a>
             </div>
         </div>
     </section>
@@ -225,7 +225,7 @@ $sliders = $db->fetchAll(
                 </div>
             </div>
             <div style="text-align: center; margin-top: 40px;">
-                <a href="news.php" class="btn">了解更多</a>
+                <a href="/news/" class="btn">了解更多</a>
             </div>
         </div>
     </section>

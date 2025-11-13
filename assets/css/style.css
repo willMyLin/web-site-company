@@ -20,12 +20,13 @@ body {
 
 /* 头部样式 */
 .header {
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 40px auto 0 auto;
+    max-width: 480px;
     z-index: 1000;
 }
 
@@ -509,6 +510,145 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* 分页样式 - 全新设计 */
+.page-navi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin: 70px auto 30px auto;
+    max-width: 800px;
+    width: 100%;
+    padding: 0;
+}
+
+.page-navi-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.page-btn, .page-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 20px;
+    background: #fff;
+    color: #666;
+    font-weight: 500;
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.page-btn {
+    min-width: 40px;
+    padding: 0;
+}
+
+.page-btn svg {
+    display: block;
+}
+
+.page-num:hover, .page-btn:hover {
+    background: #0066cc;
+    color: #fff;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+}
+
+.page-num.active {
+    background: linear-gradient(135deg, #0066cc 0%, #00a8ff 100%);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+    transform: scale(1.05);
+    cursor: default;
+}
+
+.page-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 40px;
+    color: #999;
+    font-size: 18px;
+    letter-spacing: 2px;
+    cursor: default;
+    user-select: none;
+}
+
+.page-info {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #666;
+    font-size: 14px;
+}
+
+.page-total, .page-current {
+    display: inline-block;
+    min-width: 24px;
+    padding: 2px 8px;
+    background: linear-gradient(135deg, #0066cc 0%, #00a8ff 100%);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 12px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .page-navi {
+        margin: 50px auto 20px auto;
+    }
+    
+    .page-navi-inner {
+        padding: 10px 12px;
+        border-radius: 40px;
+        gap: 6px;
+    }
+    
+    .page-btn, .page-num {
+        min-width: 36px;
+        height: 36px;
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    
+    .page-btn {
+        min-width: 36px;
+        padding: 0;
+    }
+    
+    .page-btn svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .page-ellipsis {
+        min-width: 24px;
+        height: 36px;
+        font-size: 16px;
+    }
+    
+    .page-info {
+        font-size: 13px;
+    }
 }
 
 .news-item {
@@ -814,6 +954,52 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        display: block !important;
+        grid-template-columns: none;
+        gap: 0;
+        background: none;
+    }
+    .footer-section {
+        text-align: center;
+        background: #fff;
+        border-radius: 16px;
+        margin: 0 10px 16px 10px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+        padding: 18px 8px 12px 8px;
+    }
+    .footer-section h3 {
+        font-size: 20px;
+        color: #0066cc;
+        margin-bottom: 18px;
+        font-weight: bold;
+    }
+    .footer-section ul {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    .footer-section ul li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #34495e;
+    }
+    .footer-section ul li a {
+        color: #0066cc;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    .footer-section ul li a:hover {
+        color: #0052a3;
+    }
+    .footer-bottom {
+        background: none;
+        color: #bdc3c7;
+        font-size: 13px;
+        margin-top: 10px;
+    }
 }
 
 .footer-section h3 {

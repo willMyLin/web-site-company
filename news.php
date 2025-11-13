@@ -22,6 +22,7 @@ if ($categoryId > 0) {
 
 // 获取新闻总数
 $totalSql = "SELECT COUNT(*) as total FROM articles a LEFT JOIN categories c ON a.category_id = c.id $whereClause";
+
 $totalResult = $db->fetch($totalSql, $params);
 $total = $totalResult['total'];
 $totalPages = ceil($total / $perPage);
@@ -95,22 +96,58 @@ foreach($settingsResult as $setting) {
 
                     <!-- 分页 -->
                     <?php if($totalPages > 1): ?>
-                    <div class="pagination">
-                        <?php if($page > 1): ?>
-                            <a href="?page=<?php echo $page-1; ?><?php echo $categoryId ? '&category='.$categoryId : ''; ?>">&laquo; 上一页</a>
-                        <?php endif; ?>
-                        
-                        <?php for($i = 1; $i <= $totalPages; $i++): ?>
-                            <?php if($i == $page): ?>
-                                <span class="current"><?php echo $i; ?></span>
-                            <?php else: ?>
-                                <a href="?page=<?php echo $i; ?><?php echo $categoryId ? '&category='.$categoryId : ''; ?>"><?php echo $i; ?></a>
+                    <div class="page-navi">
+                        <div class="page-navi-inner">
+                            <?php if($page > 1): ?>
+                                <a href="?page=1<?php echo $categoryId ? '&category='.$categoryId : ''; ?>" class="page-btn page-first">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8.5 2.5L3 8l5.5 5.5M13 2.5L7.5 8l5.5 5.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                                </a>
+                                <a href="?page=<?php echo $page-1; ?><?php echo $categoryId ? '&category='.$categoryId : ''; ?>" class="page-btn page-prev">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
                             <?php endif; ?>
-                        <?php endfor; ?>
-                        
-                        <?php if($page < $totalPages): ?>
-                            <a href="?page=<?php echo $page+1; ?><?php echo $categoryId ? '&category='.$categoryId : ''; ?>">下一页 &raquo;</a>
-                        <?php endif; ?>
+                            
+                            <?php
+                            // 智能分页逻辑
+                            $range = 2;
+                            $start = max(1, $page - $range);
+                            $end = min($totalPages, $page + $range);
+                            
+                            if($start > 1) {
+                                echo '<a href="?page=1' . ($categoryId ? '&category='.$categoryId : '') . '" class="page-num">1</a>';
+                                if($start > 2) {
+                                    echo '<span class="page-ellipsis">···</span>';
+                                }
+                            }
+                            
+                            for($i = $start; $i <= $end; $i++):
+                                if($i == $page): ?>
+                                    <span class="page-num active"><?php echo $i; ?></span>
+                                <?php else: ?>
+                                    <a href="?page=<?php echo $i; ?><?php echo $categoryId ? '&category='.$categoryId : ''; ?>" class="page-num"><?php echo $i; ?></a>
+                                <?php endif;
+                            endfor;
+                            
+                            if($end < $totalPages) {
+                                if($end < $totalPages - 1) {
+                                    echo '<span class="page-ellipsis">···</span>';
+                                }
+                                echo '<a href="?page='.$totalPages.($categoryId ? '&category='.$categoryId : '').'" class="page-num">'.$totalPages.'</a>';
+                            }
+                            ?>
+                            
+                            <?php if($page < $totalPages): ?>
+                                <a href="?page=<?php echo $page+1; ?><?php echo $categoryId ? '&category='.$categoryId : ''; ?>" class="page-btn page-next">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                                <a href="?page=<?php echo $totalPages; ?><?php echo $categoryId ? '&category='.$categoryId : ''; ?>" class="page-btn page-last">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M7.5 2.5L13 8l-5.5 5.5M3 2.5L8.5 8 3 13.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                        <div class="page-info">
+                            共 <span class="page-total"><?php echo $totalPages; ?></span> 页 / 第 <span class="page-current"><?php echo $page; ?></span> 页
+                        </div>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -150,3 +187,4 @@ foreach($settingsResult as $setting) {
                 <script src="/assets/js/main.js"></script>
 </body>
 </html>
+

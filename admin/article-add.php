@@ -149,6 +149,7 @@ $categories = $db->fetchAll("SELECT * FROM categories ORDER BY type, sort_order"
                 <li><a href="index.php">控制台</a></li>
                 <li><a href="articles.php" class="active">文章管理</a></li>
                 <li><a href="categories.php">分类管理</a></li>
+                <li><a href="sliders.php">轮播图管理</a></li>
                 <li><a href="media.php">图片管理</a></li>
                 <li><a href="settings.php">网站设置</a></li>
                 <li><a href="logout.php">退出登录</a></li>
