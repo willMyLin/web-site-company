@@ -119,36 +119,36 @@ $sliders = $db->fetchAll(
         <div class="container">
             <div class="stats-layout">
                 <div class="stats-left">
-                    <h2 class="stats-title">厦门交个朋友有限公司</h2>
-                    <div class="stats-subtitle">SINCE1995</div>
-                    <p class="stats-desc">交个朋友成立于1995年，深耕企业数字化服务28年。我们专注于网站建设、品牌设计与数字营销，为客户提供从策划到落地的一站式互联网解决方案，助力企业在数字时代实现品牌价值提升与业务增长。</p>
+                    <h2 class="stats-title"><?php echo isset($settings['company_name']) ? htmlspecialchars($settings['company_name']) : '厦门交个朋友有限公司'; ?></h2>
+                    <!-- <div class="stats-subtitle">SINCE1995</div> -->
+                    <p class="stats-desc"><?php echo isset($settings['company_intro']) ? htmlspecialchars($settings['company_intro']) : ''; ?></p>
                     
                     <div class="stats-grid-compact">
                         <div class="stat-compact">
-                            <div class="stat-num" data-target="29"><span class="counter">0</span><span>年</span></div>
+                            <div class="stat-num" data-target="<?php echo isset($settings['stat_years']) ? $settings['stat_years'] : 29; ?>"><span class="counter">0</span><span>年</span></div>
                             <div class="stat-text">公司成立</div>
                         </div>
                         <div class="stat-compact">
-                            <div class="stat-num" data-target="15"><span class="counter">0</span><span>亿元</span></div>
+                            <div class="stat-num" data-target="<?php echo isset($settings['stat_assets']) ? $settings['stat_assets'] : 15; ?>"><span class="counter">0</span><span>亿元</span></div>
                             <div class="stat-text">公司资产</div>
                         </div>
                         <div class="stat-compact">
-                            <div class="stat-num" data-target="100"><span class="counter">0</span><span>+</span></div>
+                            <div class="stat-num" data-target="<?php echo isset($settings['stat_cities']) ? $settings['stat_cities'] : 100; ?>"><span class="counter">0</span><span>+</span></div>
                             <div class="stat-text">业务覆盖城市</div>
                         </div>
                     </div>
                     
                     <div class="stats-grid-compact">
                         <div class="stat-compact">
-                            <div class="stat-num" data-target="4000"><span class="counter">0</span><span>+</span></div>
+                            <div class="stat-num" data-target="<?php echo isset($settings['stat_cases']) ? $settings['stat_cases'] : 4000; ?>"><span class="counter">0</span><span>+</span></div>
                             <div class="stat-text">实施案例</div>
                         </div>
                         <div class="stat-compact">
-                            <div class="stat-num" data-target="30"><span class="counter">0</span><span>+</span></div>
+                            <div class="stat-num" data-target="<?php echo isset($settings['stat_branches']) ? $settings['stat_branches'] : 30; ?>"><span class="counter">0</span><span>+</span></div>
                             <div class="stat-text">分公司及办事机构</div>
                         </div>
                         <div class="stat-compact">
-                            <div class="stat-num" data-target="26"><span class="counter">0</span><span></span></div>
+                            <div class="stat-num" data-target="<?php echo isset($settings['stat_provinces']) ? $settings['stat_provinces'] : 26; ?>"><span class="counter">0</span><span></span></div>
                             <div class="stat-text">业务覆盖省份</div>
                         </div>
                     </div>
@@ -204,7 +204,7 @@ $sliders = $db->fetchAll(
 
 
     <!-- 产品中心 -->
-    <section class="section">
+    <!-- <section class="section">
         <div class="container">
             <div class="section-title">
                 <h2>产品中心</h2>
@@ -228,7 +228,7 @@ $sliders = $db->fetchAll(
                 <a href="/news/" class="btn">了解更多</a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <?php include 'includes/footer.php'; ?>
 

@@ -2,7 +2,7 @@
 <header class="header">
    <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="index.php" class="logo">交个朋友</a>
+                <a href="/index/" class="logo"><?php echo isset($settings['site_title']) ? $settings['site_title'] : '交个朋友'; ?></a>
                 <nav>
                     <ul class="nav">
                         <li><a href="/" <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'class="active"' : ''; ?>>首页</a></li>

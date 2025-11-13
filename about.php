@@ -24,14 +24,14 @@ foreach($settingsResult as $setting) {
     <?php include 'includes/header.php'; ?>
 
     <!-- 页面头部 -->
-    <div class="page-header">
+    <!-- <div class="page-header">
         <div class="container">
             <h1 class="page-title">关于我们</h1>
             <div class="breadcrumb">
                 <a href="/">首页</a> / 关于我们
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 页面内容 -->
     <div class="page-content">

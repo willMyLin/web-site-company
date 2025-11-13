@@ -58,14 +58,14 @@ foreach($settingsResult as $setting) {
     <?php include 'includes/header.php'; ?>
 
     <!-- 页面头部 -->
-    <div class="page-header">
+    <!-- <div class="page-header">
         <div class="container">
             <h1 class="page-title">新闻资讯</h1>
             <div class="breadcrumb">
                 <a href="index.php">首页</a> / 新闻资讯
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 页面内容 -->
     <div class="page-content">
@@ -145,9 +145,9 @@ foreach($settingsResult as $setting) {
                                 </a>
                             <?php endif; ?>
                         </div>
-                        <div class="page-info">
+                        <!-- <div class="page-info">
                             共 <span class="page-total"><?php echo $totalPages; ?></span> 页 / 第 <span class="page-current"><?php echo $page; ?></span> 页
-                        </div>
+                        </div> -->
                     </div>
                     <?php endif; ?>
                 </div>
