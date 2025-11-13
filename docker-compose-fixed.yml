@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  # Web服务器 (Apache + PHP)
+  web:
+    build: .
+    container_name: vann-cms-web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - ./uploads:/var/www/html/uploads
+    depends_on:
+      - db
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    networks:
+      - vann-network
+
+  # MySQL数据库 - 使用5.7版本确保兼容性
+  db:
+    image: mysql:5.7
+    container_name: vann-cms-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123456
+      MYSQL_DATABASE: vann_cms
+      MYSQL_USER: vann_user
+      MYSQL_PASSWORD: vann_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./sql/database.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --default-authentication-plugin=mysql_native_password --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_DATE,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+    networks:
+      - vann-network
+
+networks:
+  vann-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
