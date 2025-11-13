@@ -58,7 +58,7 @@ foreach($settingsResult as $setting) {
 <body>
     <?php include 'includes/header.php'; ?>
 
-    <!-- 页面头部 -->
+    <!-- 页面头部
     <div class="page-header">
         <div class="container">
             <h1 class="page-title"><?php echo htmlspecialchars($article['title']); ?></h1>
@@ -69,7 +69,7 @@ foreach($settingsResult as $setting) {
                 <?php echo htmlspecialchars(Utils::truncate($article['title'], 30)); ?>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 页面内容 -->
     <div class="page-content">
