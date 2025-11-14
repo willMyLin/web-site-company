@@ -89,7 +89,7 @@ foreach($settingsResult as $setting) {
                         </div>
                         <?php endif; ?>
 
-                        <div class="article-content" style="line-height: 1.8; font-size: 16px; white-space: pre-wrap; word-wrap: break-word;">
+                        <div class="article-content" style="line-height: 1.8; font-size: 16px; white-space: pre-line; word-wrap: break-word;">
                             <?php echo $article['content']; ?>
                         </div>
                     </article>
